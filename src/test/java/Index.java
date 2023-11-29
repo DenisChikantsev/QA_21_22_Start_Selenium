@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -44,6 +45,11 @@ public class Index {
 
         WebElement input1 = wd.findElement(By.cssSelector("[name='name']"));
         WebElement inputS = wd.findElement(By.name("name"));
+    }
+
+    @AfterTest
+    public void close(){
+        wd.close();
     }
 
 }
